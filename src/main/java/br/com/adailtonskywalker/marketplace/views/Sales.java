@@ -1,4 +1,7 @@
-package br.com.adailtonskywalker.marketplace.domain;
+package br.com.adailtonskywalker.marketplace.views;
+
+import br.com.adailtonskywalker.marketplace.domain.Client;
+import br.com.adailtonskywalker.marketplace.domain.Product;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;

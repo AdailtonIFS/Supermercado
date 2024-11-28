@@ -1,314 +1,216 @@
 package br.com.adailtonskywalker.marketplace.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.io.*;
 import java.util.ArrayList;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class Client extends Pessoa {
     public static Boolean permission = false;
-    String arquivo = "Arquivo.txt";//NOME DO MEU ARQUIVO.TXT
-    private String Email;//ATRIBUTO EMAIL
-    private String CodCl;//ATRIBUTO C�DIGO
-    //--------------------------------------
+    String arquivo = "Arquivo.txt";
+    private String email;
+    private String code;
 
-
-    //========== GETTERS E SETTERS =========
-
-
-    //CONSTRUTOR DA CLASSE
-    public Client() {
-        super();
-    }
-
-    //CONSTRUTOR DA SUPER CLASSE
-    public Client(String name, String cPF, String phone, String adress, String sex, String bornDate, int idade, String rG, String cep, String email, String codCl) {
-
-        super(name, cPF, phone, adress, sex, bornDate, idade, rG, cep);
-
-        this.setEmail(email);
-        this.setCodCl(codCl);
-
-    }
-
-    //GETTER DO ATRIBUTO E-MAIL
-    public String getEmail() {
-        return Email;
-    }
-
-    //SETTER DO ATRIBUTO E-MAIL
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-
-    //--------------------------------------
-
-    //============= CONSTRUTORES ================
-
-    //GETTER DO ATRIBUTO C�DIGO
-    public String getCodCl() {
-        return CodCl;
-    }
-
-    //SETTER DO ATRIBUTO C�DIGO
-    public void setCodCl(String codCl) {
-        CodCl = codCl;
-    }
 
     @Override
-    public void exibirDados() {
-        super.exibirDados();
-        System.out.println("Email = " + this.getEmail());
-        System.out.println("C�digo de cliente = " + this.getCodCl());
+    public String toString() {
+        return super.toString() + "Email = " + getEmail() + "C�digo de cliente = " + getCode();
+    }
 
+    public void gravar() throws IOException {
+        String linha;
+        FileWriter escreverF = new FileWriter(arquivo, true);
+        PrintWriter escreverL = new PrintWriter(escreverF);
 
+        linha = String.format("%-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s", getName(), getCpf(), getPhone(), getAddress(), getGender(), getBornDate(), getRg(), getCep(), getEmail(), getCode());
+
+        escreverL.append(linha);
+        escreverL.println(" ");
+        escreverL.close();
     }
 
 
-    //---------------------------------------------
-
-    //======= M�TODOS E FUN��ES DA CLASSE =========
-
-
-    //METODO QUE GRAVA NO ARQUIVO.TXT
-    public void gravar() throws IOException {
-
-        String linha;//VARIAVEL DO TIPO STRING
-        FileWriter escreverF = new FileWriter(arquivo, true);//ABRIR ARQUIVO.TXT
-        PrintWriter escreverL = new PrintWriter(escreverF);//GRAVAR DADOS NO ARQUIVO.TXT
-
-        linha = String.format("%-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s; %-1s", this.getName(), this.getCPF(), this.getPhone(),//STRINGFORMAT
-                this.getAdress(), this.getSex(), this.getBornDate(), this.getRG(), this.getCEP(), this.getEmail(), this.getCodCl());
-
-        escreverL.append(linha);//ESCREVENDO NO ARQUIVO.TXT
-        escreverL.println(" ");
-        escreverL.close();//FECHAR ARQUIVO.TXT
-    }//
-    //M�TODO QUE PEGA AS INFORMA��ES DO ARQUIVO.TXT
-
     public ArrayList<String> pegarNome() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[0]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[0]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarCPF() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[1]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[1]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarTelefone() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[2]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[2]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarEndereco() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[3]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[3]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarSexo() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[4]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[4]);
+            linha = arquivoLogico.readLine();
             permission = true;
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarDataNascimento() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[5]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[5]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarRG() throws IOException {
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[6]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[6]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarCEP() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[7]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[7]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarEmail() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[8]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[8]);
+            linha = arquivoLogico.readLine();
             permission = true;
-
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
-
+        arquivoLogico.close();
+        return TUDO;
     }
 
     public ArrayList<String> pegarCod() throws IOException {
+        String linha;
+        ArrayList<String> TUDO = new ArrayList<String>();
+        FileReader arquivoFisico = new FileReader("Arquivo.txt");
+        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
+        linha = arquivoLogico.readLine();
 
-        String linha;//VARI�VEL DO TIPO STRING
-        ArrayList<String> TUDO = new ArrayList<String>();//ARRAYLIS DE OBJETOS STRING
-        FileReader arquivoFisico = new FileReader("Arquivo.txt");//ABRIR ARQUIVO TEXTO
-        BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);//PEGAR AS INFORMA��ES DO ARQUIVO TEXTO
-        linha = arquivoLogico.readLine();//LER UMA LINHA DO ARQUIVO TEXT
-
-        while (linha != null) {//ENQUANTO PARA VER SE A LINHA N�O EST� VAZIA
-
-            String[] dadosDaLinha = linha.split("\\;");//CRIANDO UM ARRAY DE STRING PRA RECEBER CADA LINHA DO ARQUIVO TEXTO
-            TUDO.add(dadosDaLinha[9]);//ADICIONANDO O  ARRAY DE STRINGS NO ARRAYLIST DE OBJETOS STRING
-            linha = arquivoLogico.readLine();//LENDO OUTRA LINHA
+        while (linha != null) {
+            String[] dadosDaLinha = linha.split(";");
+            TUDO.add(dadosDaLinha[9]);
+            linha = arquivoLogico.readLine();
             permission = true;
         }
 
-        arquivoLogico.close();//FECHANDO O ARQUIVO TEXTO
-        return TUDO;//RETORNANDO OS DADOS
-
+        arquivoLogico.close();
+        return TUDO;
     }
-
-
-} 
+}

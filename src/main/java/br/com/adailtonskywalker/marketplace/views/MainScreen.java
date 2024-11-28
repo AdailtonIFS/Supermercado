@@ -2,7 +2,6 @@ package br.com.adailtonskywalker.marketplace.views;
 
 import Produto.Product_Consult;
 import Produto.Product_Registration;
-import br.com.adailtonskywalker.marketplace.domain.Sales;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="refactor: migra libraries para o maven">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="refactor: setta pacotes e corrige possíveis erros">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Pessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Sales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Consult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Consult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +72,7 @@
       <updated>1732762564283</updated>
       <workItem from="1732762565712" duration="729000" />
       <workItem from="1732763317628" duration="53000" />
-      <workItem from="1732763373377" duration="1678000" />
+      <workItem from="1732763373377" duration="2801000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: ajusta camadas e remove arquivos do eclipse">
       <option name="closed" value="true" />
@@ -118,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732764611847</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor: setta pacotes e corrige possíveis erros">
+      <option name="closed" value="true" />
+      <created>1732765087038</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732765087038</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +124,8 @@
     <MESSAGE value="refactor: ajusta camadas e remove arquivos do eclipse" />
     <MESSAGE value="chore: identa o código por completo" />
     <MESSAGE value="refactor: migra libraries para o maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: migra libraries para o maven" />
+    <MESSAGE value="refactor: setta pacotes e corrige possíveis erros" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: setta pacotes e corrige possíveis erros" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
