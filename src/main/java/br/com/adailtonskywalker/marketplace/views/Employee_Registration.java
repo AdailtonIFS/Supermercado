@@ -301,9 +301,9 @@ public class Employee_Registration extends JFrame {
                     JOptionPane.showMessageDialog(null, "SEXO INV�LIDO");
                 } else if (in > 0 && in < 3) {
 
-                    Em.setSex((String) Sexo.getSelectedItem());
+                    Em.setGender((String) Sexo.getSelectedItem());
                 } else if (in == 3) {
-                    Em.setSex((String) Sexo.getSelectedItem());
+                    Em.setGender((String) Sexo.getSelectedItem());
                     JOptionPane.showMessageDialog(null, "OK, COMPREENDEMOS");
 
                 }
@@ -317,19 +317,19 @@ public class Employee_Registration extends JFrame {
                 } else {
 
                     Em.setName(NomeFun.getText());
-                    Em.setCodFun(CodFun.getText());
-                    Em.setCPF(CPF.getText());
-                    Em.setRG(RG.getText());
+                    Em.setCode(CodFun.getText());
+                    Em.setCpf(CPF.getText());
+                    Em.setRg(RG.getText());
                     SimpleDateFormat out = new SimpleDateFormat("dd/MM/yyyy");
                     String result = out.format(DataN.getDate());
 
                     Em.setBornDate(result);
                     Em.setSalar(Double.parseDouble(Salar.getText()));
                     Em.setPhone(PHONE.getText());
-                    Em.setAdress(ENDERECO.getText());
+                    Em.setAddress(ENDERECO.getText());
 
                     Em.setOffice(Cargo.getText());
-                    Em.setCEP(CEP.getText());
+                    Em.setCep(CEP.getText());
 
                     funcionarios.add(Em);
                     try {

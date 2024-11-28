@@ -45,7 +45,6 @@ public class Employee_Consult extends JFrame {
      * @throws IOException
      */
     public Employee_Consult() throws IOException {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(Employee_Consult.class.getResource("/images/3592855-business-man-employee-general-human-member-office-tie_107745.png")));
         setTitle("CONSULTAR FUNCION\u00C1RIOS");
         Employee Emt = new Employee();
 

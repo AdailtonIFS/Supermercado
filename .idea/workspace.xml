@@ -4,16 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="refactor: setta pacotes e corrige possíveis erros">
+    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="refactor: ajusta camada de domínio para uso do lombok">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arquivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Arquivo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaveDataEmployee.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SaveDataEmployee.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaveDataProducts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SaveDataProducts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientConsult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Registration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/1490129319-rounded09_82169.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/3592854-add-user-business-man-employee-general-human-member-office_107767 (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/3592855-business-man-employee-general-human-member-office-tie_107745.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Add_User-80_icon-icons.com_57380.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Compartilhada do Lightroom mobile (16).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Compartilhada do Lightroom mobile (17).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Compartilhada do Lightroom mobile (18).jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/opening.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Search-80_icon-icons.com_57273.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/User-80_icon-icons.com_57249.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/diagram-61_24456.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/ic_attach_money_128_28210.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/shopping-cart-add-button_icon-icons.com_56132.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,6 +56,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ClientRegistration.executor": "Run",
+    "Application.MainScreen.executor": "Run",
+    "Application.Opening.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -46,13 +77,51 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Opening" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Opening" />
+  <component name="RunManager" selected="Application.MainScreen">
+    <configuration name="ClientRegistration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.adailtonskywalker.marketplace.views.ClientRegistration" />
+      <module name="Programation2.0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.adailtonskywalker.marketplace.views.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.adailtonskywalker.marketplace.views.MainScreen" />
+      <module name="Programation2.0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.adailtonskywalker.marketplace.views.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Opening" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.adailtonskywalker.marketplace.Opening" />
+      <module name="Programation2.0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Opening" />
+      <item itemvalue="Application.ClientRegistration" />
+      <item itemvalue="Application.MainScreen" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainScreen" />
+        <item itemvalue="Application.ClientRegistration" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -72,7 +141,7 @@
       <updated>1732762564283</updated>
       <workItem from="1732762565712" duration="729000" />
       <workItem from="1732763317628" duration="53000" />
-      <workItem from="1732763373377" duration="2801000" />
+      <workItem from="1732763373377" duration="10548000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: ajusta camadas e remove arquivos do eclipse">
       <option name="closed" value="true" />
@@ -114,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732765087038</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor: ajusta camada de domínio para uso do lombok">
+      <option name="closed" value="true" />
+      <created>1732766450206</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732766450206</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +202,8 @@
     <MESSAGE value="chore: identa o código por completo" />
     <MESSAGE value="refactor: migra libraries para o maven" />
     <MESSAGE value="refactor: setta pacotes e corrige possíveis erros" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: setta pacotes e corrige possíveis erros" />
+    <MESSAGE value="refactor: ajusta camada de domínio para uso do lombok" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: ajusta camada de domínio para uso do lombok" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

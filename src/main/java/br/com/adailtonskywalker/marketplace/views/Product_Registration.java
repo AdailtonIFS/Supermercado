@@ -223,10 +223,10 @@ public class Product_Registration extends JFrame {
 
                     pd.setName(tfNome.getText());
                     pd.setPrice(Double.parseDouble(Preco.getText()));
-                    pd.setCodP(tfCodigo.getText());
+                    pd.setCode(tfCodigo.getText());
                     pd.setQStock(Integer.parseInt(spQuantidadeEst.getValue().toString()));
                     pd.setDescription(taDescricao.getText());
-                    pd.setTypes(tfTipo.getText());
+                    pd.setType(tfTipo.getText());
 
                     produtos.add(pd);
                     try {
