@@ -1,46 +1,36 @@
-package Produto;
+package br.com.adailtonskywalker.marketplace.views;
 
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
+import br.com.adailtonskywalker.marketplace.domain.Product;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.UIManager;
-import javax.swing.ImageIcon;
-import java.awt.Toolkit;
-
 public class Product_Consult extends JFrame {
 
-    private JPanel contentPane;
-    private JComboBox<String[]> mostrarNomes;
-    private JTextField mostrarEstoque;
-    private JTextField mostrarDescricao;
-    private JLabel lblTelefone;
-    private JLabel lblDescricao;
-    private JLabel lblCpf;
-    private JTextField mostrarCodigo;
-    private JLabel lblCodigo;
-    private JTextField mostrarTipo;
-    private JLabel lblTipo;
-    private JTextField mostrarPreco;
-    private JLabel lblPesquisar;
-    private JLabel label;
-    private JLabel label_1;
-    private JLabel label_2;
+    private final JPanel contentPane;
+    private final JComboBox<String[]> mostrarNomes;
+    private final JTextField mostrarEstoque;
+    private final JTextField mostrarDescricao;
+    private final JLabel lblTelefone;
+    private final JLabel lblDescricao;
+    private final JLabel lblCpf;
+    private final JTextField mostrarCodigo;
+    private final JLabel lblCodigo;
+    private final JTextField mostrarTipo;
+    private final JLabel lblTipo;
+    private final JTextField mostrarPreco;
+    private final JLabel lblPesquisar;
+    private final JLabel label;
+    private final JLabel label_1;
+    private final JLabel label_2;
 
     /**
      * Create the frame.
@@ -166,7 +156,7 @@ public class Product_Consult extends JFrame {
         panel.add(lblPesquisar);
 
         label = new JLabel("");
-        label.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 0, 0)));
+        label.setBorder(new MatteBorder(0, 0, 2, 0, new Color(0, 0, 0)));
         label.setBounds(51, 79, 364, 14);
         panel.add(label);
 

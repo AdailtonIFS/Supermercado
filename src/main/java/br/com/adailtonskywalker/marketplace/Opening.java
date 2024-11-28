@@ -1,25 +1,14 @@
-import java.awt.Button;
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
+package br.com.adailtonskywalker.marketplace;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.UIManager;
-import javax.swing.border.MatteBorder;
-import java.awt.Toolkit;
 
 public class Opening extends JFrame {
 
@@ -27,7 +16,7 @@ public class Opening extends JFrame {
      * Launch the application.
      */
     private static Opening frame;
-    private JPanel contentPane;
+    private final JPanel contentPane;
 
     public Opening() {
 //		setIconImage(Toolkit.getDefaultToolkit().getImage(Opening.class.getResource("/images/1490129319-rounded09_82169.png")));
@@ -38,7 +27,7 @@ public class Opening extends JFrame {
             dropthegame = Font.createFont(Font.TRUETYPE_FONT, new File("Sketch_Block.ttf")).deriveFont(82f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Sketch_Block.ttf")));
-        } catch (IOException | FontFormatException e) {
+        } catch (IOException | FontFormatException ignored) {
 
         }
 
@@ -73,7 +62,7 @@ public class Opening extends JFrame {
         JLabel label_1 = new JLabel("");
         label_1.setForeground(Color.WHITE);
         label_1.setBackground(Color.WHITE);
-        label_1.setBorder(new MatteBorder(0, 0, 6, 0, (Color) new Color(255, 255, 255)));
+        label_1.setBorder(new MatteBorder(0, 0, 6, 0, new Color(255, 255, 255)));
         label_1.setBounds(27, 178, 545, 14);
         contentPane.add(label_1);
 

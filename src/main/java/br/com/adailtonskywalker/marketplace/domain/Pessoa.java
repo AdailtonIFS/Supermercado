@@ -1,6 +1,4 @@
-package MarketPlace;
-
-import java.util.Date;
+package br.com.adailtonskywalker.marketplace.domain;
 
 public class Pessoa {
 

@@ -1,6 +1,13 @@
-package MarketPlace;
+package br.com.adailtonskywalker.marketplace.views;
 
-import java.awt.EventQueue;
+import Produto.Product_Consult;
+import Produto.Product_Registration;
+import br.com.adailtonskywalker.marketplace.domain.Sales;
+
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -9,40 +16,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import Cliente.Client_Consult;
-import Cliente.Client_Registration;
-import Employees.Employee_Consult;
-import Employees.Employee_Registration;
-import Produto.Product_Consult;
-import Produto.Product_Registration;
-
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
-
-import javax.swing.JTextField;
-import java.awt.Toolkit;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.SwingConstants;
-import javax.swing.border.MatteBorder;
-import java.awt.Window.Type;
-import javax.swing.UIManager;
-
 public class MainScreen extends JFrame {
 
-    private JPanel contentPane;
-    private JTextField Data;
+    private final JPanel contentPane;
+    private final JTextField Data;
 
     /**
      * Create the frame.
@@ -235,7 +212,7 @@ public class MainScreen extends JFrame {
 
         JLabel label_2 = new JLabel("");
         label_2.setBackground(Color.WHITE);
-        label_2.setBorder(new MatteBorder(0, 0, 8, 0, (Color) new Color(255, 255, 255)));
+        label_2.setBorder(new MatteBorder(0, 0, 8, 0, new Color(255, 255, 255)));
         label_2.setBounds(225, 271, 486, 14);
         contentPane.add(label_2);
 

@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="chore: identa o código por completo">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="refactor: migra libraries para o maven">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Sales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Consult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Consult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +51,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.sourceCode.SQL:2016, Generic",
     "vue.rearranger.settings.migration": "true"
   }
@@ -69,7 +84,7 @@
       <updated>1732762564283</updated>
       <workItem from="1732762565712" duration="729000" />
       <workItem from="1732763317628" duration="53000" />
-      <workItem from="1732763373377" duration="1141000" />
+      <workItem from="1732763373377" duration="1678000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: ajusta camadas e remove arquivos do eclipse">
       <option name="closed" value="true" />
@@ -95,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732764360878</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor: migra libraries para o maven">
+      <option name="closed" value="true" />
+      <created>1732764611847</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732764611847</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,7 +127,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor: ajusta camadas e remove arquivos do eclipse" />
     <MESSAGE value="chore: identa o código por completo" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: identa o código por completo" />
+    <MESSAGE value="refactor: migra libraries para o maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: migra libraries para o maven" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

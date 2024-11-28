@@ -1,88 +1,58 @@
-package MarketPlace;
+package br.com.adailtonskywalker.marketplace.domain;
 
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Panel;
-import java.awt.TextArea;
-import java.awt.Toolkit;
+import javax.swing.*;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-
-import Cliente.Client;
-import Produto.Product;
-
-import java.awt.Font;
-import javax.swing.UIManager;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
-import javax.swing.JList;
-import javax.swing.JScrollBar;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-
 public class Sales extends JFrame {
 
+    private final JPanel contentPane;
+    private final JTextField mostrarCodigo;
+    private final JTextField mostrarPreco;
+    private final JTextField mostrarTipo;
+    private final JTextField mostrarEstoque;
+    private final JTextField mostrarCPF;
+    private final JTextField mostrarRG;
+    private final JTextField mostrarCodigoCl;
+    private final JTextField mostrarTelefone;
+    private final JTextField mostrarEndereco;
+    private final JTextField mostrarCep;
+    private final JButton buttonConfirmar1;
+    private final JButton buttonConfirmar2;
+    private final JComboBox mostrarNomeClientes;
+    private final JSpinner QBuy;
+    private final JButton AddProdut;
+    private final JTextField TotalPrice;
+    private final JLabel lblNewLabel_5;
+    private final JLabel lblNewLabel_6;
+    private final JLabel lblProduto;
+    private final JLabel label;
+    private final JLabel lblNome;
+    private final JLabel lblNewLabel_7;
+    private final JLabel lblNewLabel_8;
+    private final JLabel lblTelefone;
+    private final JLabel lblNewLabel_9;
+    private final JLabel lblNewLabel_10;
+    private final JLabel lblNewLabel_11;
+    private final JLabel lblCliente;
+    private final JLabel label_1;
+    private final JPanel panel_2;
     double precoTotal = 0;
     String nomeremove = null;
     ArrayList<String> arrayDados = new ArrayList<String>();
     boolean cpf = false;
-    private JPanel contentPane;
-    private JTextField mostrarCodigo;
-    private JTextField mostrarPreco;
-    private JTextField mostrarTipo;
-    private JTextField mostrarEstoque;
-    private JTextField mostrarCPF;
-    private JTextField mostrarRG;
-    private JTextField mostrarCodigoCl;
-    private JTextField mostrarTelefone;
-    private JTextField mostrarEndereco;
-    private JTextField mostrarCep;
-    private JButton buttonConfirmar1;
-    private JButton buttonConfirmar2;
-    private JComboBox mostrarNomeClientes;
-    private JSpinner QBuy;
     private JTable table;
-    private JButton AddProdut;
-    private JTextField TotalPrice;
-    private JLabel lblNewLabel_5;
-    private JLabel lblNewLabel_6;
-    private JLabel lblProduto;
-    private JLabel label;
-    private JLabel lblNome;
-    private JLabel lblNewLabel_7;
-    private JLabel lblNewLabel_8;
-    private JLabel lblTelefone;
-    private JLabel lblNewLabel_9;
-    private JLabel lblNewLabel_10;
-    private JLabel lblNewLabel_11;
-    private JLabel lblCliente;
-    private JLabel label_1;
     private JList list;
     private JList<String> list_1;
-    private JPanel panel_2;
-    /**
-     * Create the frame.
-     *
-     * @throws IOException
-     */
+
     public Sales() throws IOException {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         DefaultListModel<String> model = new DefaultListModel<String>();
@@ -259,7 +229,7 @@ public class Sales extends JFrame {
         panel.add(lblProduto);
 
         label = new JLabel("");
-        label.setBorder(new MatteBorder(0, 0, 2, 0, (Color) Color.BLACK));
+        label.setBorder(new MatteBorder(0, 0, 2, 0, Color.BLACK));
         label.setBounds(670, 30, 101, 14);
         panel.add(label);
 
@@ -435,7 +405,7 @@ public class Sales extends JFrame {
         panel_1.add(lblCliente);
 
         label_1 = new JLabel("");
-        label_1.setBorder(new MatteBorder(0, 0, 2, 0, (Color) Color.BLACK));
+        label_1.setBorder(new MatteBorder(0, 0, 2, 0, Color.BLACK));
         label_1.setBounds(665, 52, 100, 14);
         panel_1.add(label_1);
         buttonConfirmar2.addActionListener(new ActionListener() {
@@ -474,7 +444,7 @@ public class Sales extends JFrame {
                         Ps.gravarDadosVenda("DADOS DO CLIENTE");
                         Ps.gravarDadosVenda("NOME:");
                         Ps.gravarDadosVenda(nomeCl);
-                        if (cpf == true) {
+                        if (cpf) {
                             Ps.gravarDadosVenda("CPF:");
                             Ps.gravarDadosVenda(cpfCl);
                         }

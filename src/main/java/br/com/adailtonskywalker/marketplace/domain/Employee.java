@@ -1,13 +1,7 @@
-package Employees;
+package br.com.adailtonskywalker.marketplace.domain;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
-
-import MarketPlace.Pessoa;
 
 public class Employee extends Pessoa {
 
@@ -19,7 +13,7 @@ public class Employee extends Pessoa {
     private String Office;//ATRIBUTO CARGO
     private String CodFun;//ATRIBUTO C�DIGO
 
-	
+
     //--------------------------------------
 
 

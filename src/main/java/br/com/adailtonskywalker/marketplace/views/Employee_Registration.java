@@ -1,57 +1,42 @@
-package Employees;
+package br.com.adailtonskywalker.marketplace.views;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.SystemColor;
+import br.com.adailtonskywalker.marketplace.domain.Employee;
+import com.toedter.calendar.JDateChooser;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.text.MaskFormatter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.text.MaskFormatter;
-
-import com.toedter.calendar.JDateChooser;
-
-import javax.swing.UIManager;
-import javax.swing.border.MatteBorder;
-import java.awt.Toolkit;
 
 
 public class Employee_Registration extends JFrame {
 
-    private JPanel contentPane;
-    private JTextField NomeFun;
-    private MaskFormatter ftmTelefone;//Atributo formatador para telefone�����
-    private MaskFormatter ftmRG;//Atributo formatador para data
-    private MaskFormatter ftmCPF;//Atributo que formato o CPF
-    private MaskFormatter ftmCEP;//Atributo que formato o CPF
-    private JLabel lblCpf;
-    private JLabel lblTelefone;
-    private JTextField ENDERECO;
-    private JTextField CodFun;
+    private final JPanel contentPane;
+    private final JTextField NomeFun;
+    private final MaskFormatter ftmTelefone;//Atributo formatador para telefone�����
+    private final MaskFormatter ftmRG;//Atributo formatador para data
+    private final MaskFormatter ftmCPF;//Atributo que formato o CPF
+    private final MaskFormatter ftmCEP;//Atributo que formato o CPF
+    private final JLabel lblCpf;
+    private final JLabel lblTelefone;
+    private final JTextField ENDERECO;
+    private final JTextField CodFun;
+    private final JTextField Salar;
+    private final JTextField Cargo;
     private JTextField textField;
     private JTextField textField_1;
     private JTextField textField_2;
     private JTextField textField_3;
     private JTextField textField_4;
-    private JTextField Salar;
     private JTextField textField_5;
-    private JTextField Cargo;
 
     /**
      * Create the frame.
@@ -148,7 +133,7 @@ public class Employee_Registration extends JFrame {
         panel.add(lblFuncionrios);
 
         JLabel label_1 = new JLabel("");
-        label_1.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 0, 0)));
+        label_1.setBorder(new MatteBorder(0, 0, 2, 0, new Color(0, 0, 0)));
         label_1.setBounds(276, 42, 148, 14);
         panel.add(label_1);
 

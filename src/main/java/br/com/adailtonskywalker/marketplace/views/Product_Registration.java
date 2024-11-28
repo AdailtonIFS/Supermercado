@@ -1,41 +1,29 @@
-package Produto;
+package br.com.adailtonskywalker.marketplace.views;
 
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.SystemColor;
-import java.awt.TextArea;
+import br.com.adailtonskywalker.marketplace.domain.Product;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.text.MaskFormatter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.JTextField;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.text.MaskFormatter;
-import java.awt.Toolkit;
-
 public class Product_Registration extends JFrame {
 
-    private JPanel contentPane;
-    private JTextField tfNome;
-    private JLabel lbCodigo;
-    private JTextField tfCodigo;
-    private JLabel lbDescricao;
-    private JTextField tfTipo;
+    private final JPanel contentPane;
+    private final JTextField tfNome;
+    private final JLabel lbCodigo;
+    private final JTextField tfCodigo;
+    private final JLabel lbDescricao;
+    private final JTextField tfTipo;
+    private final JTextField Preco;
     private MaskFormatter ftmDinheiro;//Atributo formatador para dinheiro�����
-    private JTextField Preco;
 
     /**
      * Create the frame.
@@ -120,7 +108,7 @@ public class Product_Registration extends JFrame {
         panel.add(lblProdutos);
 
         JLabel label = new JLabel("");
-        label.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 0, 0)));
+        label.setBorder(new MatteBorder(0, 0, 2, 0, new Color(0, 0, 0)));
         label.setBounds(152, 29, 120, 14);
         panel.add(label);
 
@@ -188,7 +176,7 @@ public class Product_Registration extends JFrame {
         cancelar.setFont(new Font("Arial", Font.BOLD, 13));
 
         JLabel label_2 = new JLabel("");
-        label_2.setBorder(new MatteBorder(1, 0, 0, 0, (Color) new Color(0, 0, 0)));
+        label_2.setBorder(new MatteBorder(1, 0, 0, 0, new Color(0, 0, 0)));
         label_2.setBounds(437, 0, 57, 14);
         panel_1.add(label_2);
 

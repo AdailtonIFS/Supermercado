@@ -1,4 +1,4 @@
-package Cliente;
+package br.com.adailtonskywalker.marketplace.views;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -31,6 +31,7 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.UIManager;
 import javax.swing.border.MatteBorder;
 import java.awt.Toolkit;
+import br.com.adailtonskywalker.marketplace.domain.*;
 
 
 public class Client_Registration extends JFrame {

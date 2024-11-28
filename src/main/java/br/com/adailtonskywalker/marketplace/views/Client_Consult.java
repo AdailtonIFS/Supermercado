@@ -1,57 +1,42 @@
-package Cliente;
+package br.com.adailtonskywalker.marketplace.views;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JComboBox;
-import java.awt.TextArea;
-import javax.swing.JFormattedTextField;
-import java.awt.SystemColor;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.border.LineBorder;
-import javax.swing.ImageIcon;
-import javax.swing.UIManager;
-import javax.swing.border.MatteBorder;
-import java.awt.Toolkit;
+import br.com.adailtonskywalker.marketplace.domain.*;
 
 public class Client_Consult extends JFrame {
 
-    private JPanel contentPane;
-    private JComboBox<String[]> mostrarNomes;
-    private JTextField mostrarTelefone;
-    private JTextField mostrarEmail;
-    private JTextField mostrarDataNascimento;
-    private JLabel lblTelefone;
-    private JLabel lblEmail;
-    private JLabel lblDataDeNascimento;
-    private JLabel lblCpf;
-    private JLabel lblRg;
-    private JTextField mostrarCodigo;
-    private JLabel lblCodigo;
-    private JTextField mostrarEndereco;
-    private JLabel lblEndereo;
-    private JTextField mostrarCEP;
-    private JLabel lblCep;
-    private JTextField mostrarCPF;
-    private JTextField mostrarRg;
-    private JTextField mostrarSexo;
-    private JLabel label;
-    private JLabel lblNewLabel_1;
-    private JLabel lblNewLabel_2;
-    private JLabel label_1;
+    private final JPanel contentPane;
+    private final JComboBox<String[]> mostrarNomes;
+    private final JTextField mostrarTelefone;
+    private final JTextField mostrarEmail;
+    private final JTextField mostrarDataNascimento;
+    private final JLabel lblTelefone;
+    private final JLabel lblEmail;
+    private final JLabel lblDataDeNascimento;
+    private final JLabel lblCpf;
+    private final JLabel lblRg;
+    private final JTextField mostrarCodigo;
+    private final JLabel lblCodigo;
+    private final JTextField mostrarEndereco;
+    private final JLabel lblEndereo;
+    private final JTextField mostrarCEP;
+    private final JLabel lblCep;
+    private final JTextField mostrarCPF;
+    private final JTextField mostrarRg;
+    private final JTextField mostrarSexo;
+    private final JLabel label;
+    private final JLabel lblNewLabel_1;
+    private final JLabel lblNewLabel_2;
+    private final JLabel label_1;
 
     /**
      * Create the frame.
@@ -238,7 +223,7 @@ public class Client_Consult extends JFrame {
         panel.add(lblNewLabel_1);
 
         lblNewLabel_2 = new JLabel("");
-        lblNewLabel_2.setBorder(new MatteBorder(0, 0, 2, 0, (Color) new Color(0, 0, 0)));
+        lblNewLabel_2.setBorder(new MatteBorder(0, 0, 2, 0, new Color(0, 0, 0)));
         lblNewLabel_2.setBounds(51, 29, 366, 41);
         panel.add(lblNewLabel_2);
 
