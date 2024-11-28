@@ -10,7 +10,6 @@ import javax.swing.border.LineBorder;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Objects;
@@ -21,23 +20,19 @@ public class ClientRegistration extends JFrame {
     private JFormattedTextField CPF, RG, PHONE, CEP;
     private JDateChooser DataN;
 
-    public ClientRegistration() throws ParseException {
+    public ClientRegistration() throws Exception {
         initUI();
     }
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ClientRegistration frame = new ClientRegistration();
-                    frame.setVisible(true);
-                } catch (Exception ignored) {
-                }
-            }
+        EventQueue.invokeLater(() -> {
+            try {
+                new ClientRegistration().setVisible(true);
+            } catch (Exception ignored) {}
         });
     }
 
-    private void initUI() throws ParseException {
+    private void initUI() throws Exception {
         setIconImage(Toolkit.getDefaultToolkit().getImage(ClientRegistration.class.getResource("/images/business_application_addmale_useradd_insert_add_user_client_2312.png")));
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         setTitle("CADASTRO DE CLIENTES");
@@ -66,7 +61,7 @@ public class ClientRegistration extends JFrame {
         return contentPane;
     }
 
-    private JPanel createTopPanel() throws ParseException {
+    private JPanel createTopPanel() throws Exception {
         JPanel panelCima = ComponentFactory.createConfiguredPanel(new Color(240, 255, 240), new Color(0, 0, 0), 2, 188, 80, 413, 170);
         panelCima.setLayout(null);
 
@@ -88,7 +83,7 @@ public class ClientRegistration extends JFrame {
         return panelCima;
     }
 
-    private JPanel createBottomPanel() throws ParseException {
+    private JPanel createBottomPanel() throws Exception {
         JPanel panelBaixo = ComponentFactory.createConfiguredPanel(SystemColor.info, new Color(0, 0, 0), 2, 188, 245, 413, 357);
         panelBaixo.setLayout(null);
 
@@ -191,7 +186,7 @@ public class ClientRegistration extends JFrame {
         return textField;
     }
 
-    private JFormattedTextField createFormattedTextField(JPanel panel, Font font, MaskFormatter formatter, int x, int y, int width, int height) throws ParseException {
+    private JFormattedTextField createFormattedTextField(JPanel panel, Font font, MaskFormatter formatter, int x, int y, int width, int height) {
         JFormattedTextField formattedTextField = ComponentFactory.createFormattedTextField(font, formatter, x, y, width, height);
         panel.add(formattedTextField);
         return formattedTextField;

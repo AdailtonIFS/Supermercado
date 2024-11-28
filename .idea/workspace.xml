@@ -4,32 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="refactor: ajusta camada de domínio para uso do lombok">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="47460283-c43a-4766-a73c-7c57a11e2a2f" name="Changes" comment="refactor: componentiza aplicação e muda o design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arquivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Arquivo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SaveDataEmployee.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SaveDataEmployee.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SaveDataProducts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SaveDataProducts.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/Opening.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientConsult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Client_Registration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Consult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Employee_Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/Product_Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/1490129319-rounded09_82169.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/3592854-add-user-business-man-employee-general-human-member-office_107767 (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/3592855-business-man-employee-general-human-member-office-tie_107745.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Add_User-80_icon-icons.com_57380.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Compartilhada do Lightroom mobile (16).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Compartilhada do Lightroom mobile (17).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Compartilhada do Lightroom mobile (18).jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/opening.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Search-80_icon-icons.com_57273.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/User-80_icon-icons.com_57249.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/diagram-61_24456.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/ic_attach_money_128_28210.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/shopping-cart-add-button_icon-icons.com_56132.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientConsult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientConsult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adailtonskywalker/marketplace/views/ClientRegistration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +27,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -141,7 +126,7 @@
       <updated>1732762564283</updated>
       <workItem from="1732762565712" duration="729000" />
       <workItem from="1732763317628" duration="53000" />
-      <workItem from="1732763373377" duration="10548000" />
+      <workItem from="1732763373377" duration="10954000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: ajusta camadas e remove arquivos do eclipse">
       <option name="closed" value="true" />
@@ -191,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732766450206</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor: componentiza aplicação e muda o design">
+      <option name="closed" value="true" />
+      <created>1732774065689</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732774065689</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +196,8 @@
     <MESSAGE value="refactor: migra libraries para o maven" />
     <MESSAGE value="refactor: setta pacotes e corrige possíveis erros" />
     <MESSAGE value="refactor: ajusta camada de domínio para uso do lombok" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: ajusta camada de domínio para uso do lombok" />
+    <MESSAGE value="refactor: componentiza aplicação e muda o design" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: componentiza aplicação e muda o design" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

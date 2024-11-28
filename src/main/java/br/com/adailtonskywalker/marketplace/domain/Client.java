@@ -35,7 +35,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarNome() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -53,7 +53,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarCPF() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -71,7 +71,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarTelefone() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -89,7 +89,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarEndereco() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -107,7 +107,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarSexo() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -125,7 +125,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarDataNascimento() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -144,7 +144,7 @@ public class Client extends Pessoa {
     public ArrayList<String> pegarRG() throws IOException {
 
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -162,7 +162,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarCEP() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -180,7 +180,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarEmail() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -198,7 +198,7 @@ public class Client extends Pessoa {
 
     public ArrayList<String> pegarCod() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("Arquivo.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();

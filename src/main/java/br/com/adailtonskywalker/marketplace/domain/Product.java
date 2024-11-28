@@ -41,7 +41,7 @@ public class Product {
 
     public ArrayList<String> pegarNome() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("SaveDataProducts.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -59,7 +59,7 @@ public class Product {
 
     public ArrayList<String> pegarPreco() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("SaveDataProducts.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -77,7 +77,7 @@ public class Product {
 
     public ArrayList<String> pegarCodigo() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("SaveDataProducts.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -95,7 +95,7 @@ public class Product {
 
     public ArrayList<String> pegarDescricao() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("SaveDataProducts.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -113,7 +113,7 @@ public class Product {
 
     public ArrayList<String> pegarEstoque() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("SaveDataProducts.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();
@@ -132,7 +132,7 @@ public class Product {
 
     public ArrayList<String> pegarTipo() throws IOException {
         String linha;
-        ArrayList<String> TUDO = new ArrayList<String>();
+        ArrayList<String> TUDO = new ArrayList<>();
         FileReader arquivoFisico = new FileReader("SaveDataProducts.txt");
         BufferedReader arquivoLogico = new BufferedReader(arquivoFisico);
         linha = arquivoLogico.readLine();

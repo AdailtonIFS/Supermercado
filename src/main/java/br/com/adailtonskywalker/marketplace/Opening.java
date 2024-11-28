@@ -4,13 +4,10 @@ import br.com.adailtonskywalker.marketplace.views.MainScreen;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.io.IOException;
 import java.net.URL;
 
 public class Opening extends JFrame {
-    private static Opening frame;
     private final JPanel contentPane;
 
     public Opening() {
@@ -34,8 +31,8 @@ public class Opening extends JFrame {
         });
     }
 
-    private ImageIcon loadImage(String path) {
-        URL imageUrl = getClass().getResource(path);
+    private ImageIcon loadImage() {
+        URL imageUrl = getClass().getResource("/images/opening.jpg");
         if (imageUrl != null) {
             return new ImageIcon(imageUrl);
         } else {
@@ -115,7 +112,7 @@ public class Opening extends JFrame {
 
     private void addBackgroundImage() {
         JLabel label = new JLabel("");
-        label.setIcon(loadImage("/images/opening.jpg"));
+        label.setIcon(loadImage());
         label.setBounds(0, 0, 611, 460);
         contentPane.add(label);
     }

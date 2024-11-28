@@ -83,7 +83,7 @@ public class ClientConsult extends JFrame {
         mostrarCPF = createTextField(panel, plainFont13, 154);
 
         // Criar ComboBox
-        nameList = ComponentFactory.createComboBox(new Vector<String>(Ct.pegarNome()), new Font("Arial", Font.BOLD, 13), new LineBorder(new Color(0, 0, 0), 2, true), 37, 94, 239, 26);
+        nameList = ComponentFactory.createComboBox(new Vector<>(Ct.pegarNome()), new Font("Arial", Font.BOLD, 13), new LineBorder(new Color(0, 0, 0), 2, true), 37, 94, 239, 26);
         panel.add(nameList);
     }
 
