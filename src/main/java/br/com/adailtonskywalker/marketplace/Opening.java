@@ -1,5 +1,3 @@
-package MarketPlace;
-
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -43,12 +41,8 @@ public class Opening extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Opening() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Opening.class.getResource("/images/1490129319-rounded09_82169.png")));
+//		setIconImage(Toolkit.getDefaultToolkit().getImage(Opening.class.getResource("/images/1490129319-rounded09_82169.png")));
 		setTitle("SUPERMERCADO");
 		Font dropthegame = null;
 		
@@ -97,7 +91,7 @@ public class Opening extends JFrame {
 		
 		JLabel label = new JLabel("");
 		label.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
-		label.setIcon(new ImageIcon(Opening.class.getResource("/images/Compartilhada do Lightroom mobile (18).jpg")));
+//		label.setIcon(new ImageIcon(Opening.class.getResource("/images/Compartilhada do Lightroom mobile (18).jpg")));
 		label.setBounds(0, 0, 599, 422);
 		contentPane.add(label);
 		
@@ -134,8 +128,8 @@ public class Opening extends JFrame {
 						
 						dispose();
 						
-						MainScreen frame = new MainScreen();
-						frame.setVisible(true);
+//						MainScreen frame = new MainScreen();
+//						frame.setVisible(true);
 						
 					}
 				
@@ -144,10 +138,5 @@ public class Opening extends JFrame {
 				
 			}
 		});
-		
-		
-		
-		
-		
 	}
 }
