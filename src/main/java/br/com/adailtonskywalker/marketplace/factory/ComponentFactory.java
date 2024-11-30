@@ -38,7 +38,7 @@ public class ComponentFactory {
         textField.setFont(font);
         textField.setEditable(editable);
         textField.setBackground(Color.WHITE);
-        textField.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+        textField.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
         textField.setBounds(x, y, width, height);
         return textField;
     }
@@ -46,7 +46,7 @@ public class ComponentFactory {
     public static JFormattedTextField createFormattedTextField(Font font, MaskFormatter formatter, int x, int y, int width, int height) {
         JFormattedTextField formattedTextField = new JFormattedTextField(formatter);
         formattedTextField.setFont(font);
-        formattedTextField.setBorder(new LineBorder(Color.BLACK));
+        formattedTextField.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
         formattedTextField.setBounds(x, y, width, height);
         return formattedTextField;
     }
