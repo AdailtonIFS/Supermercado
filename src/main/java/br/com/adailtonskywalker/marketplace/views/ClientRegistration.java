@@ -12,13 +12,12 @@ import java.awt.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Vector;
 
 public class ClientRegistration extends JFrame {
-    private JTextField NomeCl, CodCl, email;
-    private JFormattedTextField CPF, RG, PHONE, CEP;
-    private JDateChooser DataN;
+    private JTextField nameField, codeField, emailField;
+    private JFormattedTextField cpfField, rgField, phoneField, cepField;
+    private JDateChooser dateChooser;
 
     public ClientRegistration() throws Exception {
         initUI();
@@ -33,93 +32,72 @@ public class ClientRegistration extends JFrame {
     }
 
     private void initUI() throws Exception {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(ClientRegistration.class.getResource("/images/business_application_addmale_useradd_insert_add_user_client_2312.png")));
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         setTitle("CADASTRO DE CLIENTES");
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 810, 710);
+        setBounds(100, 100, 810, 630);
         setLocationRelativeTo(null);
 
         JPanel contentPane = createContentPane();
         setContentPane(contentPane);
 
-        JPanel panelCima = createTopPanel();
-        contentPane.add(panelCima);
+        JLabel lblClientes = ComponentFactory.createLabelWithFont("CADASTRO DE CLIENTES", new Font("Comic Sans MS", Font.BOLD, 18), 113, 40, 300, 36);
+        contentPane.add(lblClientes);
 
-        JPanel panelBaixo = createBottomPanel();
-        contentPane.add(panelBaixo);
-
-        addBackgroundImage(contentPane);
+        JPanel panelUp = createTopPanel();
+        contentPane.add(panelUp);
     }
 
     private JPanel createContentPane() {
         JPanel contentPane = new JPanel();
-        contentPane.setBackground(new Color(102, 204, 0));
+        contentPane.setBackground(new Color(153, 204, 255));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(null);
         return contentPane;
     }
 
     private JPanel createTopPanel() throws Exception {
-        JPanel panelCima = ComponentFactory.createConfiguredPanel(new Color(240, 255, 240), new Color(0, 0, 0), 2, 188, 80, 413, 170);
-        panelCima.setLayout(null);
+        JPanel panelUp = ComponentFactory.createConfiguredPanel(new Color(153, 204, 255), new Color(0, 0, 0), 2, 115, 80, 600, 500);
+        panelUp.setLayout(null);
 
-        createLabel(panelCima, "NOME:", new Font("Arial", Font.BOLD, 15), 23, 37, 65, 19);
-        NomeCl = createTextField(panelCima, new Font("Arial", Font.PLAIN, 13), 98, 38, 165, 19);
+        createLabel(panelUp, "NOME:", new Font("Arial", Font.BOLD, 15), 42, 20, 65, 19);
+        nameField = createTextField(panelUp, new Font("Arial", Font.PLAIN, 13), 98, 20, 300, 25);
 
-        createLabel(panelCima, "CPF:", new Font("Arial", Font.BOLD, 15), 33, 67, 58, 20);
-        CPF = createFormattedTextField(panelCima, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("###.###.###-##"), 98, 69, 165, 19);
+        createLabel(panelUp, "CPF:", new Font("Arial", Font.BOLD, 15), 56, 60, 58, 20);
+        cpfField = createFormattedTextField(panelUp, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("###.###.###-##"), 98, 60, 300, 25);
 
-        createLabel(panelCima, "RG:", new Font("Arial", Font.BOLD, 15), 51, 98, 37, 19);
-        RG = createFormattedTextField(panelCima, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("#.###.###-#"), 98, 99, 165, 20);
+        createLabel(panelUp, "RG:", new Font("Arial", Font.BOLD, 15), 64, 100, 37, 19);
+        rgField = createFormattedTextField(panelUp, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("#.###.###-#"), 98, 100, 300, 25);
 
-        createLabel(panelCima, "CÓDIGO:", new Font("Arial", Font.BOLD, 15), 0, 128, 101, 19);
-        CodCl = createTextField(panelCima, new Font("Arial", Font.PLAIN, 13), 98, 130, 165, 20);
+        createLabel(panelUp, "CÓDIGO:", new Font("Arial", Font.BOLD, 15), 23, 140, 101, 19);
+        codeField = createTextField(panelUp, new Font("Arial", Font.PLAIN, 13), 98, 140, 300, 25);
 
-        JLabel lblClientes = ComponentFactory.createLabelWithFont("CLIENTES", new Font("Comic Sans MS", Font.BOLD, 18), 287, 11, 101, 36);
-        panelCima.add(lblClientes);
+        createLabel(panelUp, "DATA (NASCIMENTO):", new Font("Arial", Font.BOLD, 13), 23, 180, 154, 25);
+        dateChooser = new JDateChooser();
+        dateChooser.setBorder(new LineBorder(new Color(0, 0, 0)));
+        dateChooser.setBounds(98, 180, 300, 25);
+        panelUp.add(dateChooser);
 
-        return panelCima;
-    }
+        createLabel(panelUp, "SEXO:", new Font("Arial", Font.BOLD, 13), 23, 220, 60, 25);
+        JComboBox<String> Sexo = createComboBox(panelUp, new Font("Arial", Font.PLAIN, 12), new Vector<>(Arrays.asList("ESCOLHA SEU SEXO:", "MASCULINO", "FEMININO", "PREFIRO NÃO RESPONDER")));
 
-    private JPanel createBottomPanel() throws Exception {
-        JPanel panelBaixo = ComponentFactory.createConfiguredPanel(SystemColor.info, new Color(0, 0, 0), 2, 188, 245, 413, 357);
-        panelBaixo.setLayout(null);
+        createLabel(panelUp, "E-MAIL:", new Font("Arial", Font.BOLD, 13), 23, 260, 71, 25);
+        emailField = createTextField(panelUp, new Font("Arial", Font.PLAIN, 13), 98, 260, 300, 25);
 
-        createLabel(panelBaixo, "DATA (NASCIMENTO):", new Font("Arial", Font.BOLD, 13), 10, 51, 154, 25);
-        DataN = new JDateChooser();
-        DataN.setBorder(new LineBorder(new Color(0, 0, 0)));
-        DataN.setBounds(174, 51, 195, 25);
-        panelBaixo.add(DataN);
+        createLabel(panelUp, "TELEFONE:", new Font("Arial", Font.BOLD, 13), 23, 300, 85, 25);
+        phoneField = createFormattedTextField(panelUp, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("(##)#####-####"), 98, 300, 300, 25);
 
-        createLabel(panelBaixo, "SEXO:", new Font("Arial", Font.BOLD, 13), 104, 86, 60, 25);
-        JComboBox<String> Sexo = createComboBox(panelBaixo, new Font("Arial", Font.PLAIN, 12), new Vector<>(Arrays.asList("ESCOLHA SEU SEXO:", "MASCULINO", "FEMININO", "PREFIRO NÃO RESPONDER")));
+        createLabel(panelUp, "CEP:", new Font("Arial", Font.BOLD, 13), 23, 340, 40, 25);
+        cepField = createFormattedTextField(panelUp, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("#####-###"), 98, 340, 300, 25);
 
-        createLabel(panelBaixo, "E-MAIL:", new Font("Arial", Font.BOLD, 13), 93, 122, 71, 25);
-        email = createTextField(panelBaixo, new Font("Arial", Font.PLAIN, 13), 174, 123, 195, 25);
-
-        createLabel(panelBaixo, "TELEFONE:", new Font("Arial", Font.BOLD, 13), 93, 158, 85, 25);
-        PHONE = createFormattedTextField(panelBaixo, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("(##)#####-####"), 174, 159, 195, 25);
-
-        createLabel(panelBaixo, "CEP:", new Font("Arial", Font.BOLD, 13), 120, 230, 40, 25);
-        CEP = createFormattedTextField(panelBaixo, new Font("Arial", Font.PLAIN, 13), new MaskFormatter("#####-###"), 174, 231, 195, 25);
-
-        JButton btnCancel = createButton(panelBaixo, "CANCELAR", "/images/delete_delete_deleteusers_delete_male_user_maleclient_2348.png", 51, 113);
+        JButton btnCancel = createButton(panelUp, "CANCELAR", 51, 113);
         btnCancel.addActionListener(e -> onCancel());
 
-        JButton btnSave = createButton(panelBaixo, "SALVAR", "/images/businessapplication_accept_ok_male_man_you_negocio_2311.png", 255, 114);
+        JButton btnSave = createButton(panelUp, "SALVAR", 255, 113);
         btnSave.addActionListener(e -> onSave(Sexo));
 
-        return panelBaixo;
-    }
-
-    private void addBackgroundImage(JPanel contentPane) {
-        JLabel label = new JLabel("");
-        label.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-        label.setIcon(new ImageIcon(Objects.requireNonNull(ClientRegistration.class.getResource("/images/Compartilhada do Lightroom mobile.jpg"))));
-        label.setBounds(0, 0, 794, 671);
-        contentPane.add(label);
+        return panelUp;
     }
 
     private void onCancel() {
@@ -136,14 +114,14 @@ public class ClientRegistration extends JFrame {
         int sexoIndex = Sexo.getSelectedIndex();
 
         if (isValidInput(sexoIndex)) {
-            client.setName(NomeCl.getText());
-            client.setCpf(CPF.getText());
-            client.setPhone(PHONE.getText());
-            client.setBornDate(new SimpleDateFormat("dd/MM/yyyy").format(DataN.getDate()));
-            client.setRg(RG.getText());
-            client.setCep(CEP.getText());
-            client.setEmail(email.getText());
-            client.setCode(CodCl.getText());
+            client.setName(nameField.getText());
+            client.setCpf(cpfField.getText());
+            client.setPhone(phoneField.getText());
+            client.setBornDate(new SimpleDateFormat("dd/MM/yyyy").format(dateChooser.getDate()));
+            client.setRg(rgField.getText());
+            client.setCep(cepField.getText());
+            client.setEmail(emailField.getText());
+            client.setCode(codeField.getText());
             client.setGender((String) Sexo.getSelectedItem());
 
             try {
@@ -157,15 +135,15 @@ public class ClientRegistration extends JFrame {
     }
 
     private boolean isValidInput(int sexoIndex) {
-        if (NomeCl.getText().isEmpty()) {
+        if (nameField.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "POR FAVOR INFORME SEU NOME, CAMPO OBRIGATÓRIO");
-        } else if (CodCl.getText().isEmpty()) {
+        } else if (codeField.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "POR FAVOR INFORME O CÓDIGO, CAMPO OBRIGATÓRIO");
-        } else if (RG.getText().trim().length() < 11) {
+        } else if (rgField.getText().trim().length() < 11) {
             JOptionPane.showMessageDialog(null, "POR FAVOR INFORME O RG, CAMPO OBRIGATÓRIO");
-        } else if (CPF.getText().trim().length() < 14) {
+        } else if (cpfField.getText().trim().length() < 14) {
             JOptionPane.showMessageDialog(null, "POR FAVOR INFORME O CPF, CAMPO OBRIGATÓRIO");
-        } else if (DataN.getDate() == null) {
+        } else if (dateChooser.getDate() == null) {
             JOptionPane.showMessageDialog(null, "POR FAVOR INFORME A DATA DE NASCIMENTO, CAMPO OBRIGATÓRIO");
         } else if (sexoIndex == 0) {
             JOptionPane.showMessageDialog(null, "GÊNERO INVÁLIDO");
@@ -193,13 +171,13 @@ public class ClientRegistration extends JFrame {
     }
 
     private JComboBox<String> createComboBox(JPanel panel, Font font, Vector<String> items) {
-        JComboBox<String> comboBox = ComponentFactory.createComboBox(items, font, new LineBorder(Color.BLACK), 174, 87, 195, 25);
+        JComboBox<String> comboBox = ComponentFactory.createComboBox(items, font, new LineBorder(Color.BLACK), 98, 220, 300, 25);
         panel.add(comboBox);
         return comboBox;
     }
 
-    private JButton createButton(JPanel panel, String text, String iconPath, int x, int width) {
-        JButton button = ComponentFactory.createButton(text, iconPath, new Font("Arial", Font.BOLD, 13), x, 291, width, 41);
+    private JButton createButton(JPanel panel, String text, int x, int width) {
+        JButton button = ComponentFactory.createButton(text, null, new Font("Arial", Font.BOLD, 13), x, 380, width, 41);
         panel.add(button);
         return button;
     }
