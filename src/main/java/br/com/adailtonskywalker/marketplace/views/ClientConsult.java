@@ -13,13 +13,12 @@ import java.util.Vector;
 
 public class ClientConsult extends JFrame {
 
-    private JTextField mostrarTelefone, mostrarEmail, mostrarDataNascimento, mostrarCodigo;
-    private JTextField mostrarEndereco, mostrarCEP, mostrarRg, mostrarSexo, mostrarCPF;
-    private JComboBox<String> nameList;
-    private final Client Ct;
+    private final Client client;
+    private JTextField phoneField, emailField, bornDateField, codeField, addressField, cepField, rgField, genderField, cpfField;
+    private JComboBox<String> clientList;
 
     public ClientConsult() throws IOException {
-        Ct = new Client();
+        client = new Client();
 
         setTitle("CONSULTAR CLIENTES");
         setIconImage(Toolkit.getDefaultToolkit().getImage(ClientConsult.class.getResource("/images/business_man_usersearch_thesearch_theclient_2356.png")));
@@ -72,19 +71,18 @@ public class ClientConsult extends JFrame {
         createLabel(panel, "CEP:", boldFont15, 140, 380, 36, 25);
         createLabel(panel, "GÊNERO:", boldFont15, 130, 511, 46, 20);
 
-        mostrarTelefone = createTextField(panel, plainFont13, 293);
-        mostrarEmail = createTextField(panel, plainFont13, 469);
-        mostrarDataNascimento = createTextField(panel, plainFont13, 248);
-        mostrarCodigo = createTextField(panel, plainFont13, 426);
-        mostrarEndereco = createTextField(panel, plainFont13, 339);
-        mostrarCEP = createTextField(panel, plainFont13, 383);
-        mostrarRg = createTextField(panel, plainFont13, 200);
-        mostrarSexo = createTextField(panel, plainFont13, 512);
-        mostrarCPF = createTextField(panel, plainFont13, 154);
+        phoneField = createTextField(panel, plainFont13, 293);
+        emailField = createTextField(panel, plainFont13, 469);
+        bornDateField = createTextField(panel, plainFont13, 248);
+        codeField = createTextField(panel, plainFont13, 426);
+        addressField = createTextField(panel, plainFont13, 339);
+        cepField = createTextField(panel, plainFont13, 383);
+        rgField = createTextField(panel, plainFont13, 200);
+        genderField = createTextField(panel, plainFont13, 512);
+        cpfField = createTextField(panel, plainFont13, 154);
 
-        // Criar ComboBox
-        nameList = ComponentFactory.createComboBox(new Vector<>(Ct.pegarNome()), new Font("Arial", Font.BOLD, 13), new LineBorder(new Color(0, 0, 0), 2, true), 37, 94, 239, 26);
-        panel.add(nameList);
+        clientList = ComponentFactory.createComboBox(new Vector<>(client.pegarNome()), new Font("Arial", Font.BOLD, 13), new LineBorder(new Color(0, 0, 0), 2, true), 37, 94, 239, 26);
+        panel.add(clientList);
     }
 
     private void setupButtons(JPanel panel) {
@@ -100,28 +98,28 @@ public class ClientConsult extends JFrame {
     }
 
     private void consultClient() {
-        int index = nameList.getSelectedIndex();
+        int index = clientList.getSelectedIndex();
         try {
             if (Client.permission) {
-                ArrayList<String> cpfs = Ct.pegarCPF();
-                ArrayList<String> phones = Ct.pegarTelefone();
-                ArrayList<String> addresses = Ct.pegarEndereco();
-                ArrayList<String> genders = Ct.pegarSexo();
-                ArrayList<String> bornDates = Ct.pegarDataNascimento();
-                ArrayList<String> rgs = Ct.pegarRG();
-                ArrayList<String> ceps = Ct.pegarCEP();
-                ArrayList<String> emails = Ct.pegarEmail();
-                ArrayList<String> codes = Ct.pegarCod();
+                ArrayList<String> cpfs = client.pegarCPF();
+                ArrayList<String> phones = client.pegarTelefone();
+                ArrayList<String> addresses = client.pegarEndereco();
+                ArrayList<String> genders = client.pegarSexo();
+                ArrayList<String> bornDates = client.pegarDataNascimento();
+                ArrayList<String> rgs = client.pegarRG();
+                ArrayList<String> ceps = client.pegarCEP();
+                ArrayList<String> emails = client.pegarEmail();
+                ArrayList<String> codes = client.pegarCod();
 
-                mostrarCPF.setText(cpfs.get(index));
-                mostrarTelefone.setText(phones.get(index));
-                mostrarEndereco.setText(addresses.get(index));
-                mostrarSexo.setText(genders.get(index));
-                mostrarDataNascimento.setText(bornDates.get(index));
-                mostrarRg.setText(rgs.get(index));
-                mostrarCEP.setText(ceps.get(index));
-                mostrarEmail.setText(emails.get(index));
-                mostrarCodigo.setText(codes.get(index));
+                cpfField.setText(cpfs.get(index));
+                phoneField.setText(phones.get(index));
+                addressField.setText(addresses.get(index));
+                genderField.setText(genders.get(index));
+                bornDateField.setText(bornDates.get(index));
+                rgField.setText(rgs.get(index));
+                cepField.setText(ceps.get(index));
+                emailField.setText(emails.get(index));
+                codeField.setText(codes.get(index));
             } else {
                 JOptionPane.showMessageDialog(null, "NÃO HÁ CLIENTES CADASTRADOS");
             }
