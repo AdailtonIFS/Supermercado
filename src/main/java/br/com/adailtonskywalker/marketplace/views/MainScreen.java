@@ -110,24 +110,6 @@ public class MainScreen extends JFrame {
         label_2.setBounds(225, 271, 486, 14);
         contentPane.add(label_2);
 
-        JPanel panel_1 = new JPanel();
-        panel_1.setBackground(Color.WHITE);
-        panel_1.setBounds(0, 634, 870, 37);
-        contentPane.add(panel_1);
-        panel_1.setLayout(null);
-
-        JLabel lblSystemDevelopedBy = new JLabel("System Developed by Adailton Moura da Silva and Bruno Silva Albuquerque");
-        lblSystemDevelopedBy.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
-        lblSystemDevelopedBy.setHorizontalAlignment(SwingConstants.CENTER);
-        lblSystemDevelopedBy.setBounds(10, 11, 602, 15);
-        panel_1.add(lblSystemDevelopedBy);
-
-        JLabel data1 = new JLabel(finalDate);
-        data1.setHorizontalAlignment(SwingConstants.RIGHT);
-        data1.setBounds(620, 1, 213, 37);
-        panel_1.add(data1);
-        data1.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
-
         JLabel label_1 = new JLabel("");
         label_1.setBounds(654, 649, 46, 14);
         contentPane.add(label_1);
