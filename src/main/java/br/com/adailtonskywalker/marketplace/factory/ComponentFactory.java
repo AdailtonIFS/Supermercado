@@ -58,7 +58,7 @@ public class ComponentFactory {
         }
         button.setFont(font);
         button.setBackground(UIManager.getColor("Button.background"));
-        button.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+        button.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
         button.setBounds(x, y, width, height);
         return button;
     }
