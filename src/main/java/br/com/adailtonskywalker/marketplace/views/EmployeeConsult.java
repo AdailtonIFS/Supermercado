@@ -15,7 +15,6 @@ import java.util.Vector;
 
 public class EmployeeConsult extends View implements Visualization {
 
-    private final JPanel contentPane;
     private final Employee employee = new Employee();
     private JTextField cpfField, phoneField, addressField, genderField, bornDateField, rgField, cepField, salarField, codeField, officeField;
     private JComboBox<String> employeeNameList;
@@ -26,7 +25,7 @@ public class EmployeeConsult extends View implements Visualization {
         setBounds(100, 100, 810, 710);
         setLocationRelativeTo(null);
 
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
