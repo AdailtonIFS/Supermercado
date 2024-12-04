@@ -11,12 +11,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class EmployeeRegistration extends View implements Visualization {
 
@@ -31,14 +27,12 @@ public class EmployeeRegistration extends View implements Visualization {
     private JDateChooser bornDateField;
     private JComboBox<String> genderField;
     private final Employee employee;
-    private final List<Employee> employees;
 
-    public EmployeeRegistration() throws ParseException, IOException {
+    public EmployeeRegistration() throws ParseException {
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         setTitle("CADASTRO DE FUNCIONÁRIOS");
 
         employee = new Employee();
-        employees = new ArrayList<>();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 810, 710);
@@ -188,7 +182,6 @@ public class EmployeeRegistration extends View implements Visualization {
                 employee.setAddress(addressFiel.getText());
                 employee.setOffice(officeField.getText());
                 employee.setCep(cepField.getText());
-                employees.add(employee);
 
                 try { employee.gravar(); } catch (Exception ignored) {}
                 dispose();
