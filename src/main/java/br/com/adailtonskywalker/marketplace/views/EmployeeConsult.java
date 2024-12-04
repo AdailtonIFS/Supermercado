@@ -48,8 +48,8 @@ public class EmployeeConsult extends View implements Visualization {
     }
 
     public void setupButtons(JPanel panel) {
-        createButton(panel, "VOLTAR", null, new Font("Arial", Font.BOLD, 13), 177, 603, 126, 35).addActionListener(e -> dispose());
-        createButton(panel, "CONSULTAR", null, new Font("Arial", Font.BOLD, 13), 310, 68, 156, 41).addActionListener(e -> {
+        createButton(panel, "VOLTAR", new Font("Arial", Font.BOLD, 13), 177, 603, 126, 35).addActionListener(e -> dispose());
+        createButton(panel, "CONSULTAR", new Font("Arial", Font.BOLD, 13), 310, 68, 156, 41).addActionListener(e -> {
             try {
                 fillFields();
             } catch (Exception ignored) {
