@@ -1,9 +1,8 @@
 package br.com.adailtonskywalker.marketplace.interfaces;
 
 import javax.swing.*;
-import java.io.IOException;
 
 public interface Visualization {
-    void setupComponents(JPanel panel) throws IOException;
+    void setupComponents(JPanel panel) throws Exception;
     void setupButtons(JPanel panel);
 }
