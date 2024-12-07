@@ -29,7 +29,7 @@ public class Sales extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         DefaultListModel<String> ticketListData = new DefaultListModel<>();
         setTitle("REALIZAR VENDA");
-        setBounds(100, 100, 810, 710);
+        setBounds(100, 100, 794, 672);
         setLocationRelativeTo(null);
 
         JPanel contentPane = new JPanel();
@@ -206,13 +206,13 @@ public class Sales extends JFrame {
         });
 
         cpfField = ComponentFactory.createTextField(fontPlain13, true, 130, 95, 178, 20);
-        clientPanel.add(totalPriceField);
+        clientPanel.add(cpfField);
 
         rgField = ComponentFactory.createTextField(fontPlain13, true, 130, 141, 178, 20);
-        clientPanel.add(totalPriceField);
+        clientPanel.add(rgField);
 
-        clientCodeField = ComponentFactory.createTextField(fontPlain13, true, 434, 141, 178, 20);
-        clientPanel.add(totalPriceField);
+        clientCodeField = ComponentFactory.createTextField(fontPlain13, true,  434, 141, 178, 20);
+        clientPanel.add(clientCodeField);
 
         phoneField = ComponentFactory.createTextField(fontPlain13, true, 130, 187, 178, 20);
         clientPanel.add(phoneField);
