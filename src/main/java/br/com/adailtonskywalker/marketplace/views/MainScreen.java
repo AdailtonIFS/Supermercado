@@ -1,39 +1,24 @@
 package br.com.adailtonskywalker.marketplace.views;
 
+import br.com.adailtonskywalker.marketplace.interfaces.Visualization;
+
 import javax.swing.*;
 import java.awt.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class MainScreen extends JFrame {
+public class MainScreen extends View implements Visualization {
 
     public MainScreen() {
         setTitle("TELA PRINCIPAL");
         setForeground(Color.GRAY);
-
-        Date data = new Date();
-        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-        String finalDate = formatador.format(data);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 870, 671);
         setLocationRelativeTo(null);
+
         JPanel contentPane = new JPanel();
         contentPane.setBackground(new Color(153, 204, 255));
         setContentPane(contentPane);
         contentPane.setLayout(null);
-
-        JButton btnNewButton = new JButton("VENDER");
-        btnNewButton.setBackground(UIManager.getColor("Button.background"));
-        btnNewButton.setBounds(300, 316, 255, 75);
-        btnNewButton.setFont(new Font("Comic Sans MS", Font.BOLD, 34));
-        contentPane.add(btnNewButton);
-
-        btnNewButton.addActionListener(e -> {
-            try {
-                new Sales().setVisible(true);
-            } catch (Exception ignored) {}
-        });
+        setupComponents(contentPane);
 
         JMenuBar menuBar = new JMenuBar();
         menuBar.setBounds(0, 0, 870, 37);
@@ -41,85 +26,108 @@ public class MainScreen extends JFrame {
         menuBar.setForeground(Color.WHITE);
         menuBar.setBackground(Color.WHITE);
 
-        JMenu mnCadastro = new JMenu("CLIENTE\r\n");
-        menuBar.add(mnCadastro);
+        setupButtons(menuBar);
 
-        JMenuItem MenuCad = new JMenuItem("CADASTRAR");
-        mnCadastro.add(MenuCad);
+        JButton saleButton = createButton(contentPane, "VENDER", new Font("Comic Sans MS", Font.BOLD, 34), 300, 316, 255, 75);
 
-        MenuCad.addActionListener(e -> {
+        saleButton.addActionListener(e -> {
             try {
-                new ClientRegistration().setVisible(true);
-            } catch (Exception ignored) {}
+                new Sales().setVisible(true);
+            } catch (Exception ignored) {
+            }
         });
-
-        JMenuItem MenuPes = new JMenuItem("PESQUISAR");
-        mnCadastro.add(MenuPes);
-        MenuPes.addActionListener(e -> {
-            try {
-                new ClientConsult().setVisible(true);
-            } catch (Exception ignored) {}
-        });
-
-        JMenu mnProdutos = new JMenu("PRODUTOS");
-        menuBar.add(mnProdutos);
-
-        JMenuItem MenuPCad = new JMenuItem("CADASTRAR");
-        mnProdutos.add(MenuPCad);
-        MenuPCad.addActionListener(e -> {
-            try {
-                new Product_Registration().setVisible(true);
-            } catch (Exception ignored) {}
-        });
-
-        JMenuItem MenuPpes = new JMenuItem("PESQUISAR");
-        mnProdutos.add(MenuPpes);
-        MenuPpes.addActionListener(e -> {
-            try {
-                new Product_Consult().setVisible(true);
-            } catch (Exception ignored) {}
-        });
-
-        JMenu mnFuncionario = new JMenu("FUNCIONÁRIO");
-        menuBar.add(mnFuncionario);
-
-        JMenuItem mntmCadastrar = new JMenuItem("CADASTRAR");
-        mnFuncionario.add(mntmCadastrar);
-        mntmCadastrar.addActionListener(e -> {
-            try {
-                new Employee_Registration().setVisible(true);
-            } catch (Exception ignored) {}
-        });
-
-        JMenuItem mntmPesquisar = new JMenuItem("PESQUISAR");
-        mntmPesquisar.addActionListener(e -> {
-            try {
-                new Employee_Consult().setVisible(true);
-            } catch (Exception ignored) {}
-        });
-        mnFuncionario.add(mntmPesquisar);
-
-        JLabel lblBemvindo = new JLabel("BEM-VINDO");
-        lblBemvindo.setForeground(Color.WHITE);
-        lblBemvindo.setFont(new Font("Comic Sans MS", Font.BOLD, 100));
-        lblBemvindo.setBounds(150, 194, 2000, 91);
-        contentPane.add(lblBemvindo);
-
-        JLabel label_2 = new JLabel("");
-        label_2.setBackground(Color.WHITE);
-        label_2.setBounds(225, 271, 486, 14);
-        contentPane.add(label_2);
-
-        JLabel label_1 = new JLabel("");
-        label_1.setBounds(654, 649, 46, 14);
-        contentPane.add(label_1);
     }
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
-                 new MainScreen().setVisible(true);
-            } catch (Exception ignored) {}
+                new MainScreen().setVisible(true);
+            } catch (Exception ignored) {
+            }
         });
+    }
+
+    @Override
+    public void setupComponents(JComponent component) {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
+
+        createLabel(panel, "BEM-VINDO", new Font("Comic Sans MS", Font.BOLD, 100), 150, 194, 2000, 91);
+        createLabel(panel, "", new Font("Comic Sans MS", Font.BOLD, 100), 225, 271, 486, 14);
+        createLabel(panel, "", new Font("Comic Sans MS", Font.BOLD, 100), 654, 649, 46, 14);
+    }
+
+    @Override
+    public void setupButtons(JComponent component) {
+        if (!(component instanceof JMenuBar)) {
+            throw new IllegalArgumentException("Component must be a JMenuBar");
+        }
+        JMenuBar bar = (JMenuBar) component;
+
+        JMenu clientMenu = new JMenu("CLIENTE\r\n");
+        bar.add(clientMenu);
+
+        JMenuItem clientStoreItemMenu = new JMenuItem("CADASTRAR");
+        clientMenu.add(clientStoreItemMenu);
+
+        clientStoreItemMenu.addActionListener(e -> {
+            try {
+                new ClientRegistration().setVisible(true);
+            } catch (Exception ignored) {
+            }
+        });
+
+        JMenuItem clientSearchItemMenu = new JMenuItem("PESQUISAR");
+        clientMenu.add(clientSearchItemMenu);
+        clientSearchItemMenu.addActionListener(e -> {
+            try {
+                new ClientConsult().setVisible(true);
+            } catch (Exception ignored) {
+            }
+        });
+
+        JMenu productMenu = new JMenu("PRODUTOS");
+        bar.add(productMenu);
+
+        JMenuItem productStoreItemMenu = new JMenuItem("CADASTRAR");
+        productMenu.add(productStoreItemMenu);
+        productStoreItemMenu.addActionListener(e -> {
+            try {
+                new ProductRegistration().setVisible(true);
+            } catch (Exception ignored) {
+            }
+        });
+
+        JMenuItem productSearchItemMenu = new JMenuItem("PESQUISAR");
+        productMenu.add(productSearchItemMenu);
+        productSearchItemMenu.addActionListener(e -> {
+            try {
+                new ProductConsult().setVisible(true);
+            } catch (Exception ignored) {
+            }
+        });
+
+        JMenu employeeMenu = new JMenu("FUNCIONÁRIO");
+        bar.add(employeeMenu);
+
+        JMenuItem employeeStoreItemMenu = new JMenuItem("CADASTRAR");
+        employeeMenu.add(employeeStoreItemMenu);
+        employeeStoreItemMenu.addActionListener(e -> {
+            try {
+                new EmployeeRegistration().setVisible(true);
+            } catch (Exception ignored) {
+            }
+        });
+
+        JMenuItem employeeSearchItemMenu = new JMenuItem("PESQUISAR");
+        employeeSearchItemMenu.addActionListener(e -> {
+            try {
+                new EmployeeConsult().setVisible(true);
+            } catch (Exception ignored) {
+            }
+        });
+        employeeMenu.add(employeeSearchItemMenu);
     }
 }
