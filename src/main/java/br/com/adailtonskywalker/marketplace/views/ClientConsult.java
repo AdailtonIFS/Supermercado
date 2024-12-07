@@ -107,25 +107,17 @@ public class ClientConsult extends View implements Visualization {
         int index = clientList.getSelectedIndex();
         try {
             if (Client.permission) {
-                ArrayList<String> cpfs = client.pegarCPF();
-                ArrayList<String> phones = client.pegarTelefone();
-                ArrayList<String> addresses = client.pegarEndereco();
-                ArrayList<String> genders = client.pegarSexo();
-                ArrayList<String> bornDates = client.pegarDataNascimento();
-                ArrayList<String> rgs = client.pegarRG();
-                ArrayList<String> ceps = client.pegarCEP();
-                ArrayList<String> emails = client.pegarEmail();
-                ArrayList<String> codes = client.pegarCod();
-
-                cpfField.setText(cpfs.get(index));
-                phoneField.setText(phones.get(index));
-                addressField.setText(addresses.get(index));
-                genderField.setText(genders.get(index));
-                bornDateField.setText(bornDates.get(index));
-                rgField.setText(rgs.get(index));
-                cepField.setText(ceps.get(index));
-                emailField.setText(emails.get(index));
-                codeField.setText(codes.get(index));
+                ArrayList<Client> clients = client.getClients();
+                Client client = clients.get(index);
+                cpfField.setText(client.getCpf());
+                phoneField.setText(client.getPhone());
+                addressField.setText(client.getAddress());
+                genderField.setText(client.getGender());
+                bornDateField.setText(client.getBornDate());
+                rgField.setText(client.getRg());
+                cepField.setText(client.getCep());
+                emailField.setText(client.getEmail());
+                codeField.setText(client.getCode());
             } else {
                 JOptionPane.showMessageDialog(null, "NÃO HÁ CLIENTES CADASTRADOS");
             }

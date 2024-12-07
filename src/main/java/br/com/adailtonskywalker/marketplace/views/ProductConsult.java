@@ -11,6 +11,7 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 public class ProductConsult extends View implements Visualization {
@@ -120,18 +121,13 @@ public class ProductConsult extends View implements Visualization {
             int index = productNameList.getSelectedIndex();
             try {
                 if (Product.permission) {
-                    ArrayList<String> PRECO = product.pegarPreco();
-                    ArrayList<String> CODIGO = product.pegarCodigo();
-                    ArrayList<String> DESCRICAO = product.pegarDescricao();
-                    ArrayList<String> ESTOQUE = product.pegarEstoque();
-                    ArrayList<String> TIPO = product.pegarTipo();
-
-                    priceField.setText(PRECO.get(index));
-                    codeField.setText(CODIGO.get(index));
-                    descriptionField.setText(DESCRICAO.get(index));
-                    stockField.setText(ESTOQUE.get(index));
-                    typeField.setText(TIPO.get(index));
-
+                    List<Product> products = product.getProducts();
+                    Product productData = products.get(index);
+                    priceField.setText(String.valueOf(productData.getPrice()));
+                    codeField.setText(productData.getCode());
+                    descriptionField.setText(productData.getDescription());
+                    stockField.setText(String.valueOf(productData.getQStock()));
+                    typeField.setText(productData.getType());
                 } else {
                     JOptionPane.showMessageDialog(null, "NÃO HÁ PRODUTOS CADASTRADOS");
                 }
