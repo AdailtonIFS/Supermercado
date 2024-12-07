@@ -16,14 +16,8 @@ import java.text.SimpleDateFormat;
 
 public class EmployeeRegistration extends View implements Visualization {
 
-    private JTextField nameField, codeField;
-    private JTextField addressFiel;
-    private JTextField salaryField;
-    private JTextField officeField;
-    private JFormattedTextField rgField;
-    private JFormattedTextField phoneField;
-    private JFormattedTextField cepField;
-    private JFormattedTextField cpfField;
+    private JTextField nameField, codeField, addressFiel, salaryField, officeField;
+    private JFormattedTextField rgField, phoneField, cepField, cpfField;
     private JDateChooser bornDateField;
     private JComboBox<String> genderField;
     private final Employee employee;
@@ -59,7 +53,11 @@ public class EmployeeRegistration extends View implements Visualization {
     }
 
     @Override
-    public void setupComponents(JPanel panel) throws ParseException {
+    public void setupComponents(JComponent component) throws ParseException {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
         createLabel(panel, "FUNCIONÁRIOS", new Font("Comic Sans MS", Font.BOLD, 18), 30, 11, 159, 50);
         JLabel line = ComponentFactory.createLabelBorder("", new MatteBorder(0, 0, 2, 0, new Color(0, 0, 0)), 30, 42, 148, 14);
         panel.add(line);
@@ -135,7 +133,11 @@ public class EmployeeRegistration extends View implements Visualization {
     }
 
     @Override
-    public void setupButtons(JPanel panel) {
+    public void setupButtons(JComponent component) {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
         JButton cancelButton = createButton(panel, "CANCELAR", new Font("Arial", Font.BOLD, 13), 70, 560, 125, 35);
         cancelButton.setBackground(new Color(224, 224, 224));
         cancelButton.addActionListener(e -> dispose());

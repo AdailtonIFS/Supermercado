@@ -46,7 +46,12 @@ public class ProductConsult extends View implements Visualization {
     }
 
     @Override
-    public void setupComponents(JPanel panel) throws IOException {
+    public void setupComponents(JComponent component) throws IOException {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+
+        JPanel panel = (JPanel) component;
         final int LABEL_WIDTH = 100;
         final int LABEL_HEIGHT = 25;
         final int FIELD_WIDTH = 200;
@@ -89,7 +94,12 @@ public class ProductConsult extends View implements Visualization {
     }
 
     @Override
-    public void setupButtons(JPanel panel) {
+    public void setupButtons(JComponent component) {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+
+        JPanel panel = (JPanel) component;
         JButton btnPesquise = new JButton("VOLTAR");
         btnPesquise.setBackground(UIManager.getColor("Button.background"));
         btnPesquise.setFont(new Font("Arial", Font.BOLD, 13));

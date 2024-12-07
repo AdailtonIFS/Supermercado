@@ -34,7 +34,11 @@ public class ProductRegistration extends View implements Visualization {
     }
 
     @Override
-    public void setupComponents(JPanel panelForm) {
+    public void setupComponents(JComponent component) {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
         final int LABEL_WIDTH = 100;
         final int LABEL_HEIGHT = 25;
         final int FIELD_WIDTH = 200;
@@ -45,45 +49,50 @@ public class ProductRegistration extends View implements Visualization {
 
         Font boldFont = new Font("Arial", Font.BOLD, 16);
         Font plainFont = new Font("Arial", Font.PLAIN, 13);
-        createLabel(panelForm, "CADASTRO DE PRODUTOS", new Font("Comic Sans MS", Font.BOLD, 20), 100, 10, 400, 25);
+        createLabel(panel, "CADASTRO DE PRODUTOS", new Font("Comic Sans MS", Font.BOLD, 20), 100, 10, 400, 25);
 
-        createLabel(panelForm, "NOME:", boldFont, START_X, START_Y, LABEL_WIDTH, LABEL_HEIGHT);
-        nameField = createTextField(panelForm, plainFont, START_X + LABEL_WIDTH + 10, START_Y, FIELD_WIDTH, FIELD_HEIGHT);
+        createLabel(panel, "NOME:", boldFont, START_X, START_Y, LABEL_WIDTH, LABEL_HEIGHT);
+        nameField = createTextField(panel, plainFont, START_X + LABEL_WIDTH + 10, START_Y, FIELD_WIDTH, FIELD_HEIGHT);
         currentY += GAP_Y;
 
-        createLabel(panelForm, "CÓDIGO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
-        codeField = createTextField(panelForm, plainFont, START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
+        createLabel(panel, "CÓDIGO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
+        codeField = createTextField(panel, plainFont, START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
         currentY += GAP_Y;
 
-        createLabel(panelForm, "PREÇO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
-        priceField = createTextField(panelForm, plainFont, START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
-        createLabel(panelForm, "(utilize \".\" para dividir os valores)", new Font("Arial", Font.BOLD, 12), START_X, currentY + 30, 204, 17);
+        createLabel(panel, "PREÇO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
+        priceField = createTextField(panel, plainFont, START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
+        createLabel(panel, "(utilize \".\" para dividir os valores)", new Font("Arial", Font.BOLD, 12), START_X, currentY + 30, 204, 17);
         currentY += GAP_Y;
 
-        createLabel(panelForm, "TIPO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
-        typeField = createTextField(panelForm, plainFont, START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
+        createLabel(panel, "TIPO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
+        typeField = createTextField(panel, plainFont, START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
         currentY += GAP_Y;
 
-        createLabel(panelForm, "ESTOQUE:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
+        createLabel(panel, "ESTOQUE:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
         spQuantidadeEstoque = new JSpinner();
         spQuantidadeEstoque.setBounds(START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
         spQuantidadeEstoque.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
         spQuantidadeEstoque.setFont(new Font("Arial", Font.PLAIN, 13));
-        panelForm.add(spQuantidadeEstoque);
+        panel.add(spQuantidadeEstoque);
         currentY += GAP_Y;
 
-        createLabel(panelForm, "DESCRIÇÃO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
+        createLabel(panel, "DESCRIÇÃO:", boldFont, START_X, currentY, LABEL_WIDTH, LABEL_HEIGHT);
         descriptionArea = new JTextArea();
         descriptionArea.setFont(plainFont);
         descriptionArea.setBorder(new LineBorder(Color.BLACK));
         descriptionArea.setBounds(START_X + LABEL_WIDTH + 10, currentY, FIELD_WIDTH, FIELD_HEIGHT);
         descriptionArea.setLineWrap(true);
-        panelForm.add(descriptionArea);
+        panel.add(descriptionArea);
 
     }
 
     @Override
-    public void setupButtons(JPanel panel) {
+    public void setupButtons(JComponent component) {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
+
         createButton(panel, "SALVAR", new Font("Arial", Font.BOLD, 13),243, 372, 115, 43)
                 .addActionListener(e -> salvarProduto());
 

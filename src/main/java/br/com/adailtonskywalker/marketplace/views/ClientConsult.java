@@ -2,6 +2,7 @@ package br.com.adailtonskywalker.marketplace.views;
 
 import br.com.adailtonskywalker.marketplace.domain.Client;
 import br.com.adailtonskywalker.marketplace.factory.ComponentFactory;
+import br.com.adailtonskywalker.marketplace.interfaces.Visualization;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -11,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
 
-public class ClientConsult extends JFrame {
+public class ClientConsult extends View implements Visualization {
 
     private final Client client;
     private JTextField phoneField, emailField, bornDateField, codeField, addressField, cepField, rgField, genderField, cpfField;
@@ -57,7 +58,13 @@ public class ClientConsult extends JFrame {
         return ComponentFactory.createConfiguredPanel(new Color(240, 255, 240), new Color(0, 0, 0), 2, 158, 26, 462, 634);
     }
 
-    private void setupComponents(JPanel panel) throws IOException {
+    @Override
+    public void setupComponents(JComponent component) throws IOException {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
+
         Font boldFont15 = new Font("Arial", Font.BOLD, 15);
         Font plainFont13 = new Font("Arial", Font.PLAIN, 13);
 
@@ -71,30 +78,29 @@ public class ClientConsult extends JFrame {
         createLabel(panel, "CEP:", boldFont15, 140, 380, 36, 25);
         createLabel(panel, "GÊNERO:", boldFont15, 130, 511, 46, 20);
 
-        phoneField = createTextField(panel, plainFont13, 293);
-        emailField = createTextField(panel, plainFont13, 469);
-        bornDateField = createTextField(panel, plainFont13, 248);
-        codeField = createTextField(panel, plainFont13, 426);
-        addressField = createTextField(panel, plainFont13, 339);
-        cepField = createTextField(panel, plainFont13, 383);
-        rgField = createTextField(panel, plainFont13, 200);
-        genderField = createTextField(panel, plainFont13, 512);
-        cpfField = createTextField(panel, plainFont13, 154);
+        phoneField = createTextField(panel, plainFont13, 186, 293, 198, 20);
+        emailField = createTextField(panel, plainFont13, 186, 469, 198, 20);
+        bornDateField = createTextField(panel, plainFont13, 186,  248, 198, 20);
+        codeField = createTextField(panel, plainFont13, 186,  426, 198, 20);
+        addressField = createTextField(panel, plainFont13, 186,  339, 198, 20);
+        cepField = createTextField(panel, plainFont13, 186,  383, 198, 20);
+        rgField = createTextField(panel, plainFont13, 186,  200, 198, 20);
+        genderField = createTextField(panel, plainFont13, 186,  512, 198, 20);
+        cpfField = createTextField(panel, plainFont13, 186,  154, 198, 20);
 
         clientList = ComponentFactory.createComboBox(new Vector<>(client.pegarNome()), new Font("Arial", Font.BOLD, 13), new LineBorder(new Color(0, 0, 0), 2, true), 37, 94, 239, 26);
         panel.add(clientList);
     }
 
-    private void setupButtons(JPanel panel) {
-        JButton btnBack = createButton("VOLTAR", "/images/back-arrow_icon-icons.com_72866.png", 176, 565);
-        panel.add(btnBack);
-
-        JButton btnConsult = createButton("CONSULTAR", "/images/xmag_search_find_export_locate_5984.png", 286, 87);
-        panel.add(btnConsult);
-
-        btnConsult.addActionListener(e -> consultClient());
-
-        btnBack.addActionListener(e -> dispose());
+    @Override
+    public void setupButtons(JComponent component) {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
+        Font plainFont13 = new Font("Arial", Font.PLAIN, 13);
+        createButton(panel, "VOLTAR", plainFont13, 176, 565, 130, 40).addActionListener(e -> dispose());
+        createButton(panel, "CONSULTAR", plainFont13, 286, 87, 130, 40).addActionListener(e -> consultClient());
     }
 
     private void consultClient() {
@@ -125,21 +131,6 @@ public class ClientConsult extends JFrame {
             }
         } catch (IOException ignored) {
         }
-    }
-
-    private void createLabel(JPanel panel, String text, Font font, int x, int y, int width, int height) {
-        JLabel label = ComponentFactory.createLabelWithFont(text, font, x, y, width, height);
-        panel.add(label);
-    }
-
-    private JTextField createTextField(JPanel panel, Font font, int y) {
-        JTextField textField = ComponentFactory.createTextField(font, false, 186, y, 198, 20);
-        panel.add(textField);
-        return textField;
-    }
-
-    private JButton createButton(String text, String iconPath, int x, int y) {
-        return ComponentFactory.createButton(text, iconPath, new Font("Arial", Font.BOLD, 13), x, y, 130, 40);
     }
 }
 

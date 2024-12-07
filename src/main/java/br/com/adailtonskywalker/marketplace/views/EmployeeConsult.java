@@ -46,7 +46,12 @@ public class EmployeeConsult extends View implements Visualization {
         });
     }
 
-    public void setupButtons(JPanel panel) {
+    @Override
+    public void setupButtons(JComponent component) {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+        JPanel panel = (JPanel) component;
         createButton(panel, "VOLTAR", new Font("Arial", Font.BOLD, 13), 177, 603, 126, 35).addActionListener(e -> dispose());
         createButton(panel, "CONSULTAR", new Font("Arial", Font.BOLD, 13), 310, 68, 156, 41).addActionListener(e -> {
             try {
@@ -56,7 +61,14 @@ public class EmployeeConsult extends View implements Visualization {
         });
     }
 
-    public void setupComponents(JPanel panel) throws IOException {
+    @Override
+    public void setupComponents(JComponent component) throws IOException {
+        if (!(component instanceof JPanel)) {
+            throw new IllegalArgumentException("Component must be a JPanel");
+        }
+
+        JPanel panel = (JPanel) component;
+
         Font plainFont13 = new Font("Arial", Font.PLAIN, 13);
         Font boldFont15 = new Font("Arial", Font.BOLD, 15);
 
